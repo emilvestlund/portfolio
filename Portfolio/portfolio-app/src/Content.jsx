@@ -14,7 +14,7 @@ function Content() {
             <div className="icons">
 
                 <a
-                href=""
+                href="https://github.com/emilvestlund"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub Profile"
@@ -23,7 +23,7 @@ function Content() {
                 </a>
 
                 <a
-                href=""
+                href="https://www.linkedin.com/in/emil-vestlund-17717b255/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn Profile"
@@ -32,7 +32,7 @@ function Content() {
                 </a>
 
                 <a
-                href=""
+                href="mailto:emilvestlund@hotmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Email Profile"
@@ -41,7 +41,7 @@ function Content() {
                 </a>
 
                 <a
-                href=""
+                href="https://www.behance.net/creationdzns"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Behance Profile"
