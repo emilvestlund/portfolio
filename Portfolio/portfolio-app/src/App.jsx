@@ -1,19 +1,24 @@
-import Content from './Content.jsx';
-import Header from './Header.jsx';
-import Logo from './Logo.jsx';
+import Content from './components/Content/Content.jsx';
+import Header from './components/Header/Header.jsx';
+import Logo from './components/Logo/Logo.jsx';
+import SocialIcons from './components/SocialIcons/SocialIcons.jsx';
+
+import styles from './App.module.css';
 
 function App() {
-
   return (
     <>
-    <Header></Header>
-    <div className="spacer">
-    <Logo></Logo>
-    <Content></Content>
-    </div>
+      <Header />
+
+      <div className={styles.centerWrapper}>
+        <div className={styles.gridContainer}>
+          <Logo />
+          <Content />
+          <SocialIcons />
+        </div>
+      </div>
     </>
   );
-  
 }
 
-export default App
+export default App;

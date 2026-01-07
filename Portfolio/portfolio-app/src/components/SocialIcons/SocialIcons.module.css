@@ -1,0 +1,22 @@
+.icon {
+    font-size: 3.5rem;
+    margin-right: 3rem;
+    border-radius: 50px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.icon:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 8px rgba(0, 100, 255, 0.6), 0 0 16px rgba(0, 100, 255, 0.4);
+    filter: drop-shadow(0 0 6px rgba(0, 120, 255, 0.7));
+}
+
+.icons {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icons a {
+    color: inherit;
+    text-decoration: none;
+}

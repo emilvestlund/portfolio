@@ -1,0 +1,18 @@
+
+
+.centerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "logo heading"
+        "logo description"
+        "logo icons";
+}
