@@ -4,8 +4,8 @@ export default function Header() {
   return (
       <header className={styles.header}>
         <div className={styles.titleBlock}>
-          <h1>Emil</h1>
-          <h4>Web Developer & Network Engineer</h4>
+          <h1 className="tracking-normal text-5xl gap-0.5">Emil</h1>
+          <h4 className="tracking-widest italic">Web Developer & Network Engineer</h4>
         </div>
 
         <nav>

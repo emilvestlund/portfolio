@@ -2,7 +2,7 @@ import styles from './SocialIcons.module.css';
 
 export default function SocialIcons() {
   return (
-    <div className={styles.icons} style={{ gridArea: 'icons' }}>
+    <div className={styles.icons}>
 
       <a href="https://github.com/emilvestlund"
          target="_blank"

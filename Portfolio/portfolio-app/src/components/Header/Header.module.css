@@ -8,12 +8,10 @@
 
 .titleBlock {
     display: flex;
-    flex-direction: column; /* <-- THIS is the key */
-}
-
-.titleBlock h1,
-.titleBlock h4 {
-    margin: 0; /* remove default margins */
+    flex-direction: column; 
+    margin: 0; 
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 
