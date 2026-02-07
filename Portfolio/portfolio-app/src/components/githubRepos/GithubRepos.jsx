@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
-import { Component } from '../Card/Card.jsx';
+import { createContext, useEffect, useState } from 'react';
+export const ReposContext = createContext();
 
-export default function GithubRepos() {
 
+export default function GithubRepos({ children }) {
+    
     const [repos, setRepos] = useState([]);
 
     useEffect(() => {
@@ -22,19 +23,14 @@ export default function GithubRepos() {
                 console.error('Error fetching repos from GitHub', error);
             }
         };
-
         fetchRepos();
-
     }, []);
 
+    const filterRepos = repos.filter((repo) => repo.name !== "emilvestlund");
+
     return (
-        repos.map(repo => (
-            <Component 
-                key={repo.id}
-                name={repo.name}
-                description={repo.description}
-                url={repo.html_url}
-            />
-        ))
+        <ReposContext.Provider value={filterRepos}>
+            {children}
+        </ReposContext.Provider>
     );
 }

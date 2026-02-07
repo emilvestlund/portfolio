@@ -1,0 +1,46 @@
+
+.carousel {
+  position: relative;
+  width: 47%;  
+  margin: 0 auto; 
+  padding: 20px 0; 
+}
+
+.carouselWrapper {
+  width: 100%;  
+  overflow: hidden;
+}
+
+.carouselGroup {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carouselItem {
+  flex-shrink: 0; 
+  width: calc(33.33% - 1rem); 
+}
+
+.carouselButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    transition: background-color 1s ease, transform 0.2s ease;
+}
+
+.carouselButton:hover {
+    background-color: rgba(0, 0, 255);
+    border: 1px solid rgba(0, 26, 255, 0.6);
+    box-shadow: rgba(0, 0, 64, 0.641);
+    transform: translateY(-1px) scale(1.05);
+}
+
+.left {
+  left: -40px; 
+}
+
+.right {
+  right: -40px; 
+}
