@@ -28,52 +28,54 @@ export default function CarouselComponent() {
     };
 
     useEffect(() => {
-        const interval = setInterval(handleNext, 3000); 
-        return () => clearInterval(interval); 
-    }, [currentIndex]); 
+        const interval = setInterval(handleNext, 3000);
+        return () => clearInterval(interval);
+    }, [currentIndex]);
 
     useEffect(() => {
-        setReposToDisplay(repos); 
+        setReposToDisplay(repos);
     }, [repos]);
 
     useEffect(() => {
-         handleNext(); 
+        handleNext();
     }, []);
 
     return (
-        <div className={`${styles.carousel}`}>
+        <>
             <Button
                 onClick={handlePrev}
                 className={`${styles.carouselButton} ${styles.left}`}
             >
                 <HiOutlineArrowLeft className="h-6 w-6" />
             </Button>
-
-            <div className={`${styles.carouselWrapper} overflow-x-auto no-scrollbar`}>
-                <div
-                    className={`flex ${styles.carouselGroup} transition-transform duration-300 ease-in-out`}
-                    style={{
-                        transform: `translateX(-${(currentIndex * 100) / 3}%)`, // Move by 33.33% for 3 cards
-                    }}
-                >
-                    <div className="flex space-x-4">
-                        {reposToDisplay.map((card) => (
-                            <CardComponent
-                                key={card.id}
-                                name={card.name}
-                                description={card.description}
-                                url={card.html_url}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </div>
             <Button
                 onClick={handleNext}
                 className={`${styles.carouselButton} ${styles.right}`}
             >
                 <HiOutlineArrowRight className="h-6 w-6" />
             </Button>
-        </div>
+
+            <div className={`${styles.carousel}`}>
+                <div className={styles.carouselWrapper}>
+                    <div
+                        className={`${styles.carouselGroup} transition-transform duration-300 ease-in-out`}
+                        style={{
+                            transform: `translateX(-${(currentIndex * 100) / 3}%)`,
+                        }}
+                    >
+                        <div className="flex space-x-4">
+                            {reposToDisplay.map((card) => (
+                                <CardComponent
+                                    key={card.id}
+                                    name={card.name}
+                                    description={card.description}
+                                    url={card.html_url}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
     );
 }

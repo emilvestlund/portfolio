@@ -12,7 +12,7 @@ export default function CardComponent(props) {
       <p className="font-normal text-gray-700 dark:text-gray-400 h-24 overflow-hidden">
         {props.description || "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."}
       </p>
-      <Button href={props.url || "#"} target="_blank" rel="noopener noreferrer" className="mt-4"> 
+      <Button href={props.url || "#"} target="_blank" rel="noopener noreferrer" className={`${styles.btn} mt-4 font-bold`}> 
         Visit Project
         <svg className="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <path

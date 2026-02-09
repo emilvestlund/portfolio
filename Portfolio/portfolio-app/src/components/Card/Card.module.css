@@ -1,3 +1,18 @@
 .card {
     grid-area: card;
 }
+
+.btn {
+    background-color: rgba(0, 0, 255, 0.86); 
+    border: 1px outset rgba(0, 0, 255, 0.289); 
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    backdrop-filter: blur(10px);
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 255, 0.3);
+    border: 1px outset rgba(0, 0, 255, 0.6);
+    transform-origin: center top; 
+    transform: translateY(10%); 
+}
