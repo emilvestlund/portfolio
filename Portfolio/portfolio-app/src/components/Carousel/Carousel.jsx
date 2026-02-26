@@ -1,4 +1,4 @@
-import { Button } from "flowbite-react";
+import { Button } from "flowbite-react"; // To be used when more repos are present
 import { useContext, useEffect, useState } from 'react';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi";
 import CardComponent from '../Card/Card.jsx';

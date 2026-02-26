@@ -1,6 +1,5 @@
-
 @import 'tailwindcss';
-@source "../.flowbite-react/class-list.json";
+@source '../.flowbite-react/class-list.json';
 @import "flowbite-react/plugin/tailwindcss";
 
 @layer utilities {
@@ -17,7 +16,7 @@
     box-sizing: border-box;
 }
 
-body {
+:root {
   background-color: rgb(0, 3, 19);
   color :azure;
   padding: 0;

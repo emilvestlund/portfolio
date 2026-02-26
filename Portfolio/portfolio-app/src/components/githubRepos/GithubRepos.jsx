@@ -1,9 +1,9 @@
-import { createContext, useEffect, useState } from 'react';
-export const ReposContext = createContext();
+import { useEffect, useState } from 'react';
+import CardComponent from '../Card/Card.jsx';
+import styles from './GithubRepos.module.css';
 
+export default function GithubRepos() {
 
-export default function GithubRepos({ children }) {
-    
     const [repos, setRepos] = useState([]);
 
     useEffect(() => {
@@ -26,11 +26,18 @@ export default function GithubRepos({ children }) {
         fetchRepos();
     }, []);
 
-    const filterRepos = repos.filter((repo) => repo.name !== "emilvestlund");
+    const filterRepos = repos.filter((repo) => repo.name !== "emilvestlund" && repo.name !== "portfolio");
 
     return (
-        <ReposContext.Provider value={filterRepos}>
-            {children}
-        </ReposContext.Provider>
+        <div className={styles.cardGrid} >
+            {filterRepos.map((card) => (
+                <CardComponent
+                    key={card.id}
+                    name={card.name}
+                    description={card.description}
+                    url={card.html_url}
+                />
+            ))}
+        </div>
     );
 }

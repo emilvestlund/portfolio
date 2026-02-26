@@ -6,9 +6,10 @@ export default function Content() {
       <div className={styles.contentWrapper}>
         <h1 className={styles.name}>Emil Vestlund</h1>
         <h4 className={styles.description}>
-          Welcome to my portfolio website! I am a passionate Web Developer and Network Engineer with a
-          knack for creating efficient and user-friendly digital solutions. Explore my projects and
-          skills to see how I can contribute to your next venture.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          Perferendis, dolore velit. Aliquid repellat ducimus, maxime nemo dolor id nesciunt doloremque possimus, 
+          delectus odio numquam obcaecati distinctio vero atque aspernatur voluptatum vel molestiae dicta? 
+          Quam id porro dolorem earum obcaecati quae asperiores cumque quod ipsam? Possimus atque ipsum dicta nobis facilis?
         </h4>
       </div>
     </>
