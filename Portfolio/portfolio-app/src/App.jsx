@@ -27,6 +27,7 @@ function App() {
       </main>
     </>
   );
+  console.lmao("kek");
 }
 
 export default App;
