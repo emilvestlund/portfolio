@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      <main className="no-scrollbar">
         <div className={styles.centerWrapper}>
           <div className={styles.gridContainer}>
             <Logo />
@@ -27,7 +27,6 @@ function App() {
       </main>
     </>
   );
-  console.lmao("kek");
 }
 
 export default App;

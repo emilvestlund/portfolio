@@ -4,12 +4,18 @@ import styles from './GithubRepos.module.css';
 
 export default function GithubRepos() {
     const [repos, setRepos] = useState([]);
-    const [langs, setLangs] = useState({}); 
+    const [langs, setLangs] = useState({});
 
     useEffect(() => {
         const fetchRepos = async () => {
             try {
-                const response = await fetch(`${import.meta.env.VITE_GITHUB_API_KEY}`);
+                const response = await fetch(import.meta.env.VITE_GITHUB_API_KEY, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${import.meta.env.VITE_Authentication}`,
+                        'Accept': 'application/vnd.github.v3+json',
+                    }
+                });
                 if (!response.ok) {
                     throw new Error('Failed to fetch repositories');
                 }
@@ -17,12 +23,12 @@ export default function GithubRepos() {
                 setRepos(data);
 
                 data.forEach((repo) => {
-                    fetchLanguages(repo); 
+                    fetchLanguages(repo);
                 });
 
                 console.log('Repos were fetched successfully');
             } catch (error) {
-                console.error('Error fetching repos from GitHub', error);
+                console.error('Error: ', error);
             }
         };
 
@@ -38,7 +44,7 @@ export default function GithubRepos() {
                     [repo.id]: languageData,
                 }));
             } catch (error) {
-                console.error(`Error fetching languages for ${repo.name}`, error);
+                console.error(`Error: `, error);
             }
         };
 

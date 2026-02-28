@@ -28,11 +28,11 @@ export default function CardComponent(props) {
       />
 
       <div className="p-4">
-        <h5 className="font-semibold text-white mb-2">
+        <h5 className="font-semibold text-white">
           {props.name || "No Name"}
         </h5>
 
-        <p className={`desc text-gray-400 mb-3 ${styles.desc}`}>
+        <p className={`text-gray-400 ${styles.desc}`}>
           {props.description || "No Description."}
         </p>
 
@@ -41,7 +41,7 @@ export default function CardComponent(props) {
             href={props.url || "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${styles.btn} font-semibold w-full`}
+            className={`${styles.btn} font-semibold`}
             >
             Visit Project
           </Button>
