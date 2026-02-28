@@ -26,7 +26,7 @@ export default function CardComponent(props) {
         src={props.image || "https://flowbite-react.com/images/blog/image-1.jpg"}
         alt={`${props.name} GitHub project`}
       />
-  
+
       <div className="p-4">
         <h5 className="font-semibold text-white mb-2">
           {props.name || "No Name"}
@@ -36,16 +36,18 @@ export default function CardComponent(props) {
           {props.description || "No Description."}
         </p>
 
-        <Button
-          href={props.url || "#"}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${styles.btn} font-semibold w-full`}
-        >
-          Visit Project
-        </Button>
+        <div className={styles.buttonTagsContainer}>
+          <Button
+            href={props.url || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.btn} font-semibold w-full`}
+            >
+            Visit Project
+          </Button>
 
-        {props.tag ? renderLanguages(props.tag) : <p className="text-gray-400">No tags available</p>}
+          {props.tag ? renderLanguages(props.tag) : <p className="text-gray-400">No tags available</p>}
+        </div>
       </div>
     </Card>
   );
