@@ -2,6 +2,8 @@
 @source '../.flowbite-react/class-list.json';
 @import "flowbite-react/plugin/tailwindcss";
 
+
+
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -21,9 +23,8 @@
   color :azure;
   padding: 0;
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Titillium Web", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth !important;
-    
 }

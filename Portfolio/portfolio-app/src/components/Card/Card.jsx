@@ -4,14 +4,10 @@ import styles from './Card.module.css';
 export default function CardComponent(props) {
 
   const renderLanguages = (languages) => {
-  if (!languages) {
-    return (
-      <p style={{ backgroundColor: 'red', color: 'azure' }}>
-        No language data available
-      </p>
-    );
-  }
-      
+    if (!languages) {
+      return <p className={styles.noTags}>No language data available</p>;
+    }
+
     return (
       <div className={styles.languageBox}>
         {Object.keys(languages).map((language) => (
@@ -24,30 +20,33 @@ export default function CardComponent(props) {
   };
 
   return (
-    <Card className={`max-w-sm rounded-t-4xl grow-0 ${styles.card}`}>
+    <Card className={`max-w-md rounded-lg shadow-lg ${styles.card}`}>
       <img
-        className="object-fill rounded-t-4xl"
+        className="object-cover rounded-t-lg"
         src={props.image || "https://flowbite-react.com/images/blog/image-1.jpg"}
         alt={`${props.name} GitHub project`}
       />
+  
+      <div className="p-4">
+        <h5 className="font-semibold text-white mb-2">
+          {props.name || "No Name"}
+        </h5>
 
-      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white uppercase pl-3">
-        {props.name || "No Name"}
-      </h5>
+        <p className={`desc text-gray-400 mb-3 ${styles.desc}`}>
+          {props.description || "No Description."}
+        </p>
 
-      <p className="font-normal text-gray-700 dark:text-gray-400 grow overflow-hidden mr-3 ml-3">
-        {props.description || "No Description."}
-      </p>
+        <Button
+          href={props.url || "#"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${styles.btn} font-semibold w-full`}
+        >
+          Visit Project
+        </Button>
 
-      <Button
-        href={props.url || "#"}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`${styles.btn} font-bold`}
-      >
-        Visit Project
-      </Button>
-        {props.tag ? renderLanguages(props.tag) : <p>No tags available</p>}
+        {props.tag ? renderLanguages(props.tag) : <p className="text-gray-400">No tags available</p>}
+      </div>
     </Card>
   );
 }
