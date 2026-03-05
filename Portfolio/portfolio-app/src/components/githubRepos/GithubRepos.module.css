@@ -1,8 +1,6 @@
 .cardGrid {
-    height: 700px;
-    width: 700px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    gap: 1rem;
+    gap: 1.1rem;
 }
